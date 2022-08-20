@@ -2,6 +2,19 @@ import Link from "@/components/Link";
 import siteMetadata from "@/data/siteMetadata";
 import formatDate from "@/lib/utils/formatDate";
 
+interface IAuthorProps {
+  name: string;
+  biography?: string;
+  photo?: string;
+}
+
+interface ISEOProps {
+  title: string;
+  description: string;
+  keywords: string;
+  image?: string;
+}
+
 interface IPostProps {
   title: string;
   slug: string;
@@ -9,11 +22,10 @@ interface IPostProps {
   date: string;
   excerpt: string;
   content: string;
-  tags: [];
-  author: string;
-  seo: string;
+  tags?: [];
+  author: IAuthorProps;
+  seo: ISEOProps;
 }
-
 export interface IPostsProps {
   posts: IPostProps[];
 }
